@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>BB</title>
+	<link rel="stylesheet" type="text/css" href="bb.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet">
+</head>
+<body>
+ <div class="container-fluid" id="loader">
+    
+  </div>
+  
+   <div class="container-fluid" id="back">
+    <img src="bb.png" class="img-fluid" id="bb">
+
+    <div class="container-fluid" id="label">
+     <h1 class="display-1" id="txt">My First Love</h1>
+  </div>
+    <br>
+    <div class="container-fluid" id="label">
+      <button class="learn-more" onclick="psound()" id="btn">Play</button>
+    <br>
+    <button class="learn-more" onclick="ssound()" id="btn">Pause</button>
+    <br>
+    </div>
+    <div class="container-fluid" id="waves">
+      <svg viewBox="0 0 1320 200">
+  <path fill-opacity="0.7" d="
+  M0,192
+  C220,100,440,100,660,192
+  C880,290,1100,290,1320,192
+  L1320 500
+  L0 500
+  " fill="#ff9dce"/>
+  <path fill-opacity="0.7" d="
+  M0,192
+  C220,100,440,100,660,192
+  C880,290,1100,290,1320,192
+  L1320 500
+  L0 500
+  " fill="#ffb6db"/>
+  <path fill-opacity="0.7" d="
+  M0,192
+  C220,100,440,100,660,192
+  C880,290,1100,290,1320,192
+  L1320 500
+  L0 500
+  " fill="#ffd0e7"/>
+  <path fill-opacity="0.7" d="
+  M0,192
+  C220,100,440,100,660,192
+  C880,290,1100,290,1320,192
+  L1320 500
+  L0 500
+  " fill="#ffd0e7"/>
+</svg>
+</div>
+  </div>
+
+  <audio id="myAudio">
+  <source src="First_Love.ogg" type="audio/ogg">
+  <source src="First_Love.mp3" type="audio/mpeg">
+</audio>
+  
+<script type="text/javascript">
+	
+
+function psound()
+{
+  var music = document.getElementById('myAudio');
+
+  music.play();
+  music.volume = 1;
+
+  bb.style.borderStyle = "solid"; 
+  bb.style.borderRadius = "50em";
+  bb.style.borderWidth = "10px"; 
+  bb.style.borderColor = "#ff9dce";
+  bb.style.opacity = "0.7";
+  back.style.backgroundColor = "black";
+  txt.style.color = "white";
+  txt.style.opacity = "0.7";
+  btn.style.backgroundColor = "blue";
+}
+
+function ssound()
+{
+  
+  var music = document.getElementById('myAudio');
+  music.pause();
+
+   bb.style.borderStyle = "none"; 
+  bb.style.borderRadius = " ";
+  bb.style.borderWidth = " "; 
+  bb.style.borderColor = " ";
+  bb.style.opacity = "1";
+  back.style.backgroundColor = "#ffe9f4";
+  txt.style.color = "#333";
+  txt.style.opacity = "1";
+  btn.style.opacity = "1";
+
+}
+
+setTimeout(function() {
+      // Remove the loader
+      var loader = document.getElementById('loader');
+      loader.parentNode.removeChild(loader);
+      
+      // Show the rest of the content
+      document.body.style.visibility = 'visible';
+      document.loader.style.backgroundColor = 'white';
+    }, 2500);
+
+
+
+
+
+</script>
+</body>
+</html>
